@@ -26,7 +26,7 @@
                     <div id="tweets"></div>
                     <script type="text/javascript">
                         var tweetsErrorCallback = function(errorMessage, tweet){
-                            var msg = 'Oops! \ <a href="Twitter">dev.twitter.com/pages/rate-limiting">Twitter Rate Limit Exceeded</a>. \ Try again later or search \ <a href="twitter.com/search?q=' + tweet.toQuery() + '">directly on Twitter</a>'; $('#tweets').html(msg);
+                            var msg = 'Oops! \ <a href="http://dev.twitter.com/pages/rate-limiting" target="__blank">Twitter Rate Limit Exceeded</a>. \ Try again later or search \ <a href="twitter.com/search?q=' + tweet.toQuery() + '">directly on Twitter</a>'; $('#tweets').html(msg);
                         }
                         var tweetsSuccessCallback = function(data){
                             console.log(data);
