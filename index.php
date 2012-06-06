@@ -20,7 +20,8 @@
                 <div class="span9">
                     <form class="well form-search">
                         <input type="text" placeholder="Write Something" name="search-query" class="input-large search-query">
-                        <button  type="submit" class="btn btn-success"><i class="icon-white icon-search"></i> Search Twitter</button>
+                        <button type="submit" class="btn btn-success"><i class="icon-white icon-search"></i> Search Twitter</button>
+                        <button type="button" class="clear btn btn-danger"><i class="icon-white icon-trash"></i> Clear Tweets</button>
                     </form>
                     <div id="tweets"></div>
                     <script type="text/javascript">
@@ -32,8 +33,6 @@
                             var tweetsLi = '';
                             for(var i = 0; i < data.results.length; i++){
                                 var tweet = data.results[i];
-                                // Calculate how many hours ago was the tweet posted
-                                // http://www.lupomontero.com/fetching-tweets-with-jquery-and-the-twitter-json-api/
                                 var dateTweet = new Date(tweet.created_at);
                                 var dateNow   = new Date();
                                 var dateDiff  = dateNow - dateTweet;
@@ -105,13 +104,17 @@
                                                     console.log(obj);
                                                 }
                                             });
+                                            
+                                            $('.clear').click(function(){
+                                                $('#tweets').html(null);
+                                            });
                     </script>
                 </div>
             </div>
             <hr>
             <footer>
                 <p>Twitter Search Client By Robert Main &copy; <?=date('Y')?></p>
-                <p>Powered by <a href="https://github.com/phstc/jquery-twitter">phstc/jquery-twitter</a></p>
+                <p>Powered by <a href="https://github.com/phstc/jquery-twitter" target="__blank">phstc/jquery-twitter</a></p>
             </footer>
         </div>
     </body>
