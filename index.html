@@ -41,7 +41,6 @@
                 var msg = 'Oops! <a href="http://dev.twitter.com/pages/rate-limiting">Twitter Rate Limit Exceeded</a>. Try again later or search <a href="twitter.com/search?q=' + tweet.toQuery() + '">directly on Twitter</a>'; $('#tweets').html(msg);
             }
             var tweetsSuccessCallback = function(data){
-                console.log(data);
                 var tweetsLi = '';
                 for(var i = 0; i < data.results.length; i++){
                     var tweet = data.results[i];
@@ -59,7 +58,7 @@
                             <h6>Posted: ' + tweet.created_at + '</h6>\n\
                             <p>' + tweet.text + '</p>\n\
                         </div>\n\
-                    </div>').appendTo('#tweets').hide().fadeIn(1500);
+                    </div>').appendTo('#tweets').find('a.newwindow').attr('target','__blank').hide().fadeIn(1500);
                     $('div.loading').remove();
                 }
                 $('#tweets').wrap('<div class="row-fluid">');
@@ -113,7 +112,6 @@
                         var TrendingTopic = obj[item];
                         $('<li><a data-word="' + TrendingTopic.query + '" href="">' + TrendingTopic.name + '</a></li>').appendTo('.nav-pills')
                     }
-                    console.log(obj);
                 }
             });
                         
@@ -123,10 +121,6 @@
                 $('.nav-pills li').removeClass('active');
                 
             });
-            
-            $('a.newwindow').attr('target', '__blank');
-            
-            
         </script>
     </body>
 </html>
