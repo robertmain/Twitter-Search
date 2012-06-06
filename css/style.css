@@ -18,6 +18,11 @@ div.tweet{
     margin-right: 20px;
 }
 
+div.trending{
+    overflow-x: hidden;
+    word-break: break-all;
+}
+
 div#tweets{
     max-height: 700px;
     overflow-y: auto;

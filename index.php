@@ -10,9 +10,9 @@
     <body>
         <div class="container">
             <div class="row">
-                <div class="span2 well">
+                <div class="span2 well trending">
                     <ul class="nav nav-pills nav-stacked">
-                        <li class="nav-header">Boookmarks</li>
+                        <li class="nav-header">Trending Topics</li>
                     </ul>
                 </div>
 
