@@ -104,14 +104,23 @@
                     var trends = response['trends'];
                     var k ;
                     var obj;
-                    var last;
+                    var first;
+                    var i =0;
+                    
                     for(k in trends){
+                        if(i == 0){
+                            first = k;
+                        }
                         obj = trends[k];
                     }
-                    for(item in obj){
+                    for(var item in obj){
                         var TrendingTopic = obj[item];
-                        $('<li><a data-word="' + TrendingTopic.query + '" href="">' + TrendingTopic.name + '</a></li>').appendTo('.nav-pills')
+                        $('<li class="trending"><a data-word="' + TrendingTopic.query + '" href="">' + TrendingTopic.name + '</a></li>').appendTo('.nav-pills');
                     }
+                    
+                    search(trends[first][0].name);
+                    $('input[name="search-query"]').val(trends[first][0].query);
+                    $('.nav-pills').children('.trending').first().addClass('active');
                 }
             });
                         
