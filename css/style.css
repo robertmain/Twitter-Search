@@ -1,0 +1,29 @@
+@import 'bootstrap.min.css';
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-size: 100%;
+    color: #575757;
+}
+
+div.container{
+    margin-top: 30px;
+}
+
+div.tweet{
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+div#tweets{
+    max-height: 700px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+div.tweet p, footer p{
+    font-size: 13px;
+}
